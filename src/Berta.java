@@ -9,6 +9,7 @@ public class Berta extends Person {
     @Override public void setMeinung(Meinung meinung) {
         if (meinung == Meinung.Berta) {
             super.setMeinung(Meinung.Berta);
+            //hier war der doener unterwegs
         }
     }
 
