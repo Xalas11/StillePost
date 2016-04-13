@@ -10,6 +10,7 @@ public class Berta extends Person {
         if (meinung == Meinung.Berta) {
             super.setMeinung(Meinung.Berta);
             //hier war der doener unterwegs
+            //was machen sachen
         }
     }
 
