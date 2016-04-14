@@ -5,14 +5,14 @@
 public class Person {
 
     private Meinung meinung = Meinung.Neutral;
-    protected Feld position;
+    //protected Feld position;
 
     static int antonAnhaenger = 0;
     static int bertaAnhaenger = 0;
     static int neutralAnhaenger = 0;
 
-    public Person(Feld feld) {
-        this.position = feld;
+    public Person() {
+       // this.position = feld;
         neutralAnhaenger += 1;
     }
 
@@ -30,13 +30,13 @@ public class Person {
      *
      * Die Methode sucht ein zufälliges angrenzendes Feld, entfernt sie von diesem Feld und füg sie auf dem Neuen Feld ein.
      */
-    public void wechsleFeld() {
-        Feld nachbar = position.getRandomNachbar();
-        this.position.removePerson(this);
-        this.position = nachbar;
-        this.position.addPerson(this);
+    //public void wechsleFeld() {
+    //    Feld nachbar = position.getRandomNachbar();
+     //   this.position.removePerson(this);
+     //   this.position = nachbar;
+     //   this.position.addPerson(this);
         // defenitiv verschieben in Object Feld!! Bjarne Talken
-    }
+  //  }
 
     /**
      * Findet heraus welches die "alte Meinung" war und Setzt eine neue. und aktualiesiert die jeweiligen Anhänger.

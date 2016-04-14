@@ -3,10 +3,6 @@
  *  Die Berta Klasse Erbt von der Personen Klasse
  */
 public class Berta extends Person {
-    public Berta(Feld feld) {
-        super(feld);
-    }
-
     /**
      * Die Methode ändert nun die Meinung nur noch in Berta
      */
@@ -20,7 +16,7 @@ public class Berta extends Person {
      *
      * @return
      */
-    public boolean erfaehrtVomGeruecht() {
-        return position.enthaeltGeruecht();
-    }
+   // public boolean erfaehrtVomGeruecht() {
+     //   return enthaeltGeruecht();
+  //  }
 }

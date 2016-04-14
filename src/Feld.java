@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -103,5 +104,15 @@ public class Feld {
             }
         }
         return false;
+    }
+    public void wechselFeld1() {
+        for(Person n:population){
+
+                Person temp = n;
+                removePerson(n);
+                Feld nachbar = (getRandomNachbar());
+            System.out.println(getRandomNachbar());
+                nachbar.addPerson(temp);
+            }
     }
 }

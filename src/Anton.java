@@ -3,8 +3,7 @@
  * Die Anton Klasse Erbt von der Personen Klasse
  */
 public class Anton extends Person {
-    public Anton(Feld feld) {
-        super(feld);
+    public Anton() {
         super.setMeinung(Meinung.Anton);
     }
 
