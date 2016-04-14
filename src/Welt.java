@@ -1,11 +1,12 @@
 /**
- * Created by bjarne on 11.04.16.
+ *
  */
 
 import java.util.HashSet;
 import java.util.Random;
 
 public class Welt {
+
     private int runde = 0;
     private HashSet<Person> population = new HashSet<Person>();
     private int rundenAnzahl;
@@ -15,7 +16,13 @@ public class Welt {
     private Anton anton;
     private boolean bertaIstAhnungslos = true;
 
-
+    /**
+     *
+     * @param breite
+     * @param hoehe
+     * @param populationsGroesse
+     * @param runden
+     */
     public Welt(int breite, int hoehe, int populationsGroesse, int runden) {
 
         this.spielFeld = new Feld[breite][hoehe];
@@ -64,6 +71,9 @@ public class Welt {
         runde();
     }
 
+    /**
+     * diese Methode raepresentiert einen Zyklus, des Spiels, Meinung allerfelder Setzen, Personen bewegen, Ausgabe, Rekursion..
+     */
     public void runde() {
         runde += 1;
 

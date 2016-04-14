@@ -1,5 +1,5 @@
 /**
- * Created by bjarne on 11.04.16.
+ * Die Klasse Launcher stellt das Testprogramm
  */
 
 import java.util.Scanner;

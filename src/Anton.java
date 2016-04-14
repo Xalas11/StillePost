@@ -1,5 +1,6 @@
 /**
- * Created by bjarne on 11.04.16.
+ *
+ * Die Anton Klasse Erbt von der Personen Klasse
  */
 public class Anton extends Person {
     public Anton(Feld feld) {
@@ -7,6 +8,10 @@ public class Anton extends Person {
         super.setMeinung(Meinung.Anton);
     }
 
+    /**
+     *
+     * Die Methode ändert nun die Meinung nicht mehr.
+     */
     @Override public void setMeinung(Meinung meinung) {
     }
 }
