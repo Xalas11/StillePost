@@ -1,6 +1,6 @@
 /**
- * Created by bjarne on 11.04.16.
  *
+ * Die Personen Klasse modelliert eine Person mit Meinung und Feld Daten
  */
 public class Person {
 
@@ -16,19 +16,32 @@ public class Person {
         neutralAnhaenger += 1;
     }
 
+    /**
+     *
+     * Resetet die Meinungs Statistic
+     */
     public static void reset() {
         antonAnhaenger = 0;
         bertaAnhaenger = 0;
         neutralAnhaenger = 0;
     }
 
+    /**
+     *
+     * Die Methode sucht ein zufälliges angrenzendes Feld, entfernt sie von diesem Feld und füg sie auf dem Neuen Feld ein.
+     */
     public void wechsleFeld() {
         Feld nachbar = position.getRandomNachbar();
         this.position.removePerson(this);
         this.position = nachbar;
         this.position.addPerson(this);
+        // defenitiv verschieben in Object Feld!! Bjarne Talken
     }
 
+    /**
+     * Findet heraus welches die "alte Meinung" war und Setzt eine neue. und aktualiesiert die jeweiligen Anhänger.
+     * @param meinung
+     */
     public void setMeinung(Meinung meinung) {
         if (meinung == this.meinung) {
             return;
@@ -52,6 +65,10 @@ public class Person {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public Meinung getMeinung() {
         return this.meinung;
     }
