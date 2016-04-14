@@ -1,31 +1,30 @@
+import java.util.Scanner;
+
 /**
  * Die Klasse Launcher stellt das Testprogramm
  */
-
-import java.util.Scanner;
-
 public class Launcher {
     public static void main(String args[]) {
         new Launcher().play();
     }
 
-     public void play() {
+    public void play() {
 
-        int breite = frageNachZahl("Gib eine Breite (>= 2) fuer das Spielfeld an: ", 2);
-        int hoehe = frageNachZahl("Gib eine Hoehe (>= 2) fuer das Spielfeld an: ", 2);
-        int population = frageNachZahl("Gib die Groesse der Population an (>=2): ", 2);
-        int runden = frageNachZahl("Gib die Anzahl der Runden an (>0): ", 1);
+        int breite = frageNachZahl("Gib eine Breite (2 <= breite <= 1000) fuer das Spielfeld an: ", 2, 1000);
+        int hoehe = frageNachZahl("Gib eine Hoehe (2 <= hoehe <= 1000) fuer das Spielfeld an: ", 2, 1000);
+        int population = frageNachZahl("Gib die Groesse der Population an (2 <= population <= 10000): ", 2, 10000);
+        int runden = frageNachZahl("Gib die Anzahl der Runden an (1 <= runden <= 2000): ", 1, 2000);
 
-        Welt welt = new Welt(breite,hoehe,population,runden);
-         Person.reset();
+        Welt welt = new Welt(breite, hoehe, population, runden);
+        Person.reset();
 
-        if(!beenden()) {
+        if (!beenden()) {
             play();
         }
     }
 
-     public boolean beenden() {
-        System.out.print("Tippe 'nochmal' ein, um das Spiel erneut zu spielen.\n");
+    public boolean beenden() {
+        System.out.print("Gib 'nochmal' ein, um das Spiel erneut zu spielen oder irgendwas fuer Abbruch.\n");
         Scanner sc = new Scanner(System.in);
         if (sc.hasNext()) {
             String str = sc.next();
@@ -36,7 +35,7 @@ public class Launcher {
         return true;
     }
 
-     public int frageNachZahl(String beschreibung, int kleinsteZahl) {
+    public int frageNachZahl(String beschreibung, int kleinsteZahl, int groessteZahl) {
         boolean valid = false;
         int wert = 0;
         while (!valid) {
@@ -44,7 +43,7 @@ public class Launcher {
             Scanner sc = new Scanner(System.in);
             if (sc.hasNextInt()) {
                 int read = sc.nextInt();
-                if (read >= kleinsteZahl) {
+                if (read >= kleinsteZahl && read <= groessteZahl) {
                     valid = true;
                     wert = read;
                 }
